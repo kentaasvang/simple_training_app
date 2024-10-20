@@ -34,10 +34,10 @@ CREATE TABLE exercises_to_workouts (
 
 CREATE TABLE exercise_details (
     exercise_detail_id TEXT PRIMARY KEY NOT NULL,
+    exercise_to_workout_id TEXT NOT NULL,
     reps INTEGER NOT NULL,
     sets INTEGER NOT NULL,
     weight REAL NOT NULL,
-    exercise_to_workout_id TEXT NOT NULL,
 
     FOREIGN KEY (exercise_to_workout_id) REFERENCES exercises_to_workouts(exercise_to_workout_id)
 );
@@ -45,8 +45,8 @@ CREATE TABLE exercise_details (
 
 CREATE TABLE sessions (
     session_id TEXT PRIMARY KEY NOT NULL,
-    date TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL, 
     workout_id TEXT NOT NULL,
+    date TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL, 
 
     FOREIGN KEY (workout_id) REFERENCES workouts(workout_id)
 );
