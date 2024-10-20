@@ -1,2 +1,5 @@
 # dbs
 sta.db
+
+# python files
+__pycache__/
