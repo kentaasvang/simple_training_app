@@ -1,0 +1,25 @@
+{% extends "_base_dashboard.html" %}
+
+{% block body %}
+
+<h1> Create a workout </h1>
+
+<form method="POST", action="{{ url_for('create_workout', user_id=user.user_id) }}">
+
+    <div class="mb-3">
+        <label for="nameInput" class="form-label">Name</label>
+        <input name="name" type="text" class="form-control" id="nameInput" aria-describedby="nameHelp">
+        {# <div id="nameHelp" class="form-text">We'll never share your email with anyone else.</div> #}
+    </div>
+
+    <div class="mb-3">
+        <label for="descriptionInput" class="form-label">Description</label>
+        <textarea name="description" type="text" class="form-control" rows=3 id="descriptionInput"> </textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+
+
+{% endblock body %}

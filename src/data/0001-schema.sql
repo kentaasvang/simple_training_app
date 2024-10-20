@@ -16,7 +16,7 @@ CREATE TABLE workouts (
     workout_id TEXT PRIMARY KEY NOT NULL,
     user_id TEXT NOT NULL,
     name TEXT NOT NULL,
-    description TEXT NOT NULL,
+    description TEXT,
 
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

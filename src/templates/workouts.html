@@ -1,0 +1,31 @@
+{% extends "_base_dashboard.html" %}
+
+
+{% block body %}
+
+<h1> Workouts </h1>
+
+<div class="list-group">
+
+    {% if not workouts %}
+
+        <p> No workouts were found. </p>
+
+    {% else %}
+
+        {% for workout in workouts %}
+
+        <a href="{{ url_for('workout', workout_id=workout.workout_id, user_id=user.user_id ) }}" 
+                class="list-group-item list-group-item-action"> 
+
+                {{ workout.name }} 
+
+            </a>
+
+        {% endfor %}
+
+    {% endif %}
+
+</div>
+
+{% endblock body %}

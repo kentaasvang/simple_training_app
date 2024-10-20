@@ -1,6 +1,6 @@
 import sqlite3
 
-DB_CONNECTION_STRING = "../../sta.db"
+DB_CONNECTION_STRING = "sta.db"
 
 
 def _get_connection():
@@ -8,5 +8,9 @@ def _get_connection():
     connection.execute("PRAGMA foreign_keys = ON;")
     return connection
 
+
+def get_connection():
+    connection = _get_connection()
+    return connection
 
 
